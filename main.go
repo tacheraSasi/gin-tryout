@@ -1,9 +1,20 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
 
+	"github.com/gin-gonic/gin"
+)
 
-
-func main(){
+func main() {
 	app := gin.Default()
+
+	app.GET("/", func(c *gin.Context) {
+		c.JSON(
+			http.StatusOK,
+			gin.H{
+				"message": "Hello from gin",
+			},
+		)
+	})
 }
