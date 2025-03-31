@@ -1,10 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
+
+var PORT string = "3000"
 
 func main() {
 	app := gin.Default()
@@ -17,4 +20,7 @@ func main() {
 			},
 		)
 	})
+
+	fmt.Println("Server is running on port",PORT)
+	app.Run(PORT)
 }
