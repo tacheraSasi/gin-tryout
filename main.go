@@ -8,6 +8,7 @@ import (
 )
 
 var PORT string = "3000"
+var ADDR string = "0.0.0.0:"+PORT 
 
 func main() {
 	app := gin.Default()
@@ -21,6 +22,6 @@ func main() {
 		)
 	})
 
-	fmt.Println("Server is running on port",PORT)
-	app.Run(PORT)
+	fmt.Println("Server is running on ",ADDR)
+	app.Run(ADDR)
 }
